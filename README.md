@@ -32,8 +32,8 @@ target - Ссылка на беседу
 duration - Длительность спама
 ```
 
-```
 Linux:
+```
 raider --target https://vk.me/join... --duration 50
 
 target - Ссылка на беседу
