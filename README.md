@@ -6,6 +6,7 @@
 Перейдите https://github.com/dinaxu-attack/Vk-Spammer/releases
 ```
 windows: нажмите raider.exe
+
 linux: нажмите raider
 
 Дальше создайте папку с любым названием, в нее засуньте файл и создайте (в той же папке) новую папку с названием assets, в этой папке создайте 3 файла:
