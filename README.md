@@ -3,7 +3,9 @@
 
 # Установка
 ```
-Перейдите``` https://github.com/dinaxu-attack/Vk-Spammer/releases
+Перейдите
+```
+https://github.com/dinaxu-attack/Vk-Spammer/releases
 ```
 windows: нажмите raider.exe
 linux: нажмите raider
