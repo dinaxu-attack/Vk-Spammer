@@ -9,14 +9,12 @@ windows: нажмите raider.exe
 
 linux: нажмите raider
 
-Дальше создайте папку с любым названием, в нее засуньте файл и создайте (в той же папке) новую папку с названием assets, в этой папке создайте 3 файла:
-proxies.txt
-tokens.txt
-message.txt
+Дальше создайте папку с любым названием, в нее засуньте файл и создайте (в той же папке) новую папку с названием assets, в этой папке создайте tokens.txt
 
-В message.txt напишите любое сообщение, им софт будет спамить
-В proxies.txt напишите любые прокси (Ipv4 , http) в формате login:password:ip:port. Их можно купить на proxy.family
-В tokens.txt напишите вк токены
+В config.json укажите сообщение (message)
+В config.json укажите прокси (proxies)
+В config.json укажите апи ключ от анти капчи (anticaptcha)
+В assets/tokens.txt напишите вк токены
 
 Перейдите к след. шагу
 
@@ -27,15 +25,19 @@ message.txt
 Windows:
 
 ```
-raider.exe --target https://vk.me/join... --duration 50
+raider.exe --target https://vk.me/join... --duration 50 --delay 3 --namechanger (необяз.) --firstname Имя --lastname Фамилия
 target - Ссылка на беседу
 duration - Длительность спама
+delay - Задержка 
+namechanger - Меняет ники (Для этого нужно будет указать firstname и lastname)
 ```
 
 Linux:
 ```
-raider --target https://vk.me/join... --duration 50
+raider --target https://vk.me/join... --duration 50 --namechanger (необяз.) --firstname Имя --lastname Фамилия
 
 target - Ссылка на беседу
 duration - Длительность спама
+delay - Задержка 
+namechanger - Меняет ники (Для этого нужно будет указать firstname и lastname)
 ```
