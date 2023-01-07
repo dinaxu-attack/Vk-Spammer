@@ -1,0 +1,7 @@
+{
+    "anticaptcha": "Апи ключ от Rucaptcha",
+    "message": "СООБЩЕНИЕ",
+    "proxies": [
+        "прокси в форамете user:password:ip:port"
+    ]
+}

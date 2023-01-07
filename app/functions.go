@@ -35,11 +35,22 @@ func ReadTokens() []string {
 
 }
 
+func RandomString(leng int) string {
+	var letters = []rune("abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789")
+
+	s := make([]rune, leng)
+	for i := range s {
+		s[i] = letters[rand.Intn(len(letters))]
+	}
+	return string(s)
+}
+
 func Request(vurl string) []byte {
 	req, err := http.NewRequest("GET", vurl, nil)
 
 	if err != nil {
 		fmt.Println("Ошибка при запросе с прокси")
+		os.Exit(0)
 	}
 
 	var proxyURL url.URL
@@ -73,10 +84,12 @@ func Request(vurl string) []byte {
 	resp, err := client.Do(req)
 	if err != nil {
 		fmt.Println("Ошибка при запросе с прокси")
+		os.Exit(0)
 	}
 	responc, err := ioutil.ReadAll(resp.Body)
 	if err != nil {
 		fmt.Println("Ошибка при запросе с прокси")
+		os.Exit(0)
 	}
 	return responc
 
@@ -100,20 +113,8 @@ func user_agent() string {
 
 func getProxy() []string {
 
-	file, err := os.Open("./assets/proxies.txt")
+	var strs = Proxies
 
-	if err != nil {
-		fmt.Println("Не могу найти файл assets/proxies.txt")
-	}
-	scanner := bufio.NewScanner(file)
-
-	scanner.Split(bufio.ScanLines)
-	var strs []string
-
-	for scanner.Scan() {
-		strs = append(strs, scanner.Text())
-	}
-	file.Close()
 	cStrs := len(strs)
 
 	s1 := rand.NewSource(time.Now().UnixNano())
@@ -125,4 +126,18 @@ func getProxy() []string {
 
 	return proxy
 
+}
+
+func Handler(text []byte, url string) {
+	spl := strings.Split(string(text), "\n")
+	for _, i := range spl {
+		if strings.Contains(i, "Captcha needed") {
+			Findcaptcha(text, url)
+		} else if !strings.Contains(i, "error") {
+			sent++
+		} else {
+			errors++
+		}
+
+	}
 }
