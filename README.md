@@ -34,7 +34,7 @@ namechanger - Меняет ники (Для этого нужно будет у�
 
 Linux:
 ```
-raider --target https://vk.me/join... --duration 50 --namechanger (необяз.) --firstname Имя --lastname Фамилия
+raider --target https://vk.me/join... --duration 50 --delay 3 --namechanger (необяз.) --firstname Имя --lastname Фамилия
 
 target - Ссылка на беседу
 duration - Длительность спама
