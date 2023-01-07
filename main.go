@@ -11,9 +11,9 @@ import (
 
 func help() {
 	if runtime.GOOS == "windows" {
-		fmt.Println("Usage:\nraider.exe --target https://vk.me/join... --duration 50 --delay 4 --namechanger --name Афанасий Князев")
+		fmt.Println("Usage:\nraider.exe --target https://vk.me/join... --duration 50 --delay 4 --namechanger --firstname Имя --lastname Фамилия")
 	} else {
-		fmt.Println("Usage:\n./raider --target https://vk.me/join... --duration 50 --delay 4 --namechanger --name Афанасий Князев")
+		fmt.Println("Usage:\n./raider --target https://vk.me/join... --duration 50 --delay 4 --namechanger --firstname Имя --lastname Фамилия")
 	}
 }
 
